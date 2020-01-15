@@ -18,7 +18,7 @@ import HomeScreen from './screens/Home';
 export default class App extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <HomeScreen />
       </View>
     );
@@ -26,6 +26,9 @@ export default class App extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   test: {
     paddingTop: 40,
     paddingLeft: 40,

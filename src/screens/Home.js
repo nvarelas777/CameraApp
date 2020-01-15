@@ -10,7 +10,7 @@ export default class Home extends Component {
           ref={ref => {
             this.camera = ref;
           }}
-          style={styles.preview}
+          style={styles.camera}
           type={RNCamera.Constants.Type.back}
           flashMode={RNCamera.Constants.FlashMode.on}
           androidCameraPermissionOptions={{
@@ -29,13 +29,11 @@ export default class Home extends Component {
             console.log(barcodes);
           }}
         />
-        <View style={{flex: 0, flexDirection: 'row', justifyContent: 'center'}}>
-          <TouchableOpacity
-            onPress={this.takePicture.bind(this)}
-            style={styles.capture}>
-            <Text style={{fontSize: 30}}> SNAP </Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+          onPress={this.takePicture.bind(this)}
+          style={styles.capture}>
+          <Text style={{fontSize: 30}}> SNAP </Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -52,21 +50,18 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    backgroundColor: 'black',
   },
-  preview: {
-    alignItems: 'stretch',
-    height: 200,
+  camera: {
+    flex: 1,
   },
   capture: {
+    position: 'absolute',
     backgroundColor: 'green',
     borderRadius: 5,
     padding: 15,
     paddingHorizontal: 20,
     alignSelf: 'center',
-    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
     margin: 20,
   },
 });
